@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
 
+import { NgReduxModule, NgRedux } from 'ng2-redux';
+import { store, IAppState } from './store';
+
 import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
 
@@ -19,10 +22,11 @@ import { ApiService } from './core/api.service';
     AppComponent
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     MaterializeModule,
     HttpModule,
+    NgReduxModule,
     UserModule,
     NavbarModule
   ],
@@ -31,4 +35,8 @@ import { ApiService } from './core/api.service';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private ngRedux: NgRedux<IAppState>) {
+    this.ngRedux.provideStore(store);
+  }
+}
