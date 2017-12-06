@@ -1,0 +1,25 @@
+<div class="body-main">
+  <div class="container">
+    <div class="img">
+      <img src="https://vignette4.wikia.nocookie.net/animal-jam-clans-1/images/3/31/Christmas-baubles-and-bells-transparent-background.png/revision/latest?cb=20161026215315"
+        alt="ChristmasWreath">
+    </div>
+    <form #loginForm='ngForm' (submit)='login()'>
+      <div class="input-field col s6">
+        <input type="email" [(ngModel)]="user.email" name="email" id="username" class="validate" required #email='ngModel'/>
+        <label for="username">Email</label>
+      </div>
+      <div class="error" [hidden]='email.valid || email.pristine'>
+        <p>E-mail is required!</p>
+      </div>
+      <div class="input-field col s6">
+        <input type="password" [(ngModel)]="user.password" name="password" id="password" class="validate" required #password='ngModel'/>
+        <label for="password">Password</label>
+      </div>
+      <div class="error" [hidden]='password.valid || password.pristine'>
+        <p>Password is required!</p>
+      </div>
+      <input type="submit" class="btn" value="Login" [disabled]='!loginForm.form.valid' />
+    </form>
+  </div>
+</div>
