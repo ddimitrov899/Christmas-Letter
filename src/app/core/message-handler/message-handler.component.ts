@@ -17,7 +17,6 @@ export class MessageHandlerComponent implements OnInit {
       .select(state => state.core)
       .subscribe(core => {
         this.message = core.message;
-        console.log(core);
         this.alert = core.isSuccess ? 'alert-success' : 'alert-danger'
       });
   }
