@@ -7,10 +7,12 @@ import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
 
 import { NavbarComponent } from './navbar/navbar.component';
+import { MessageHandlerComponent } from './message-handler/message-handler.component';
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    MessageHandlerComponent
   ],
   imports: [
   CommonModule,
@@ -19,7 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     MaterializeModule
    ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    MessageHandlerComponent
   ],
   providers: [],
 })

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterUser } from './register.user.model';
-import { UsersService } from '../users.service';
+import { UserAction } from '../../store/users/users.action';
+import { NgRedux } from 'ng2-redux';
+import { IAppState } from '../../store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'letter-register',
@@ -10,14 +13,22 @@ import { UsersService } from '../users.service';
 export class RegisterComponent implements OnInit {
 
   user: RegisterUser = new RegisterUser();
-  constructor(private usersService: UsersService) { }
+  constructor(
+    private usersAction: UserAction,
+    private router: Router,
+    private ngRedux: NgRedux<IAppState>) { }
 
   ngOnInit() {
   }
 
-  register () {
-    this.usersService.register(this.user).subscribe(res => {
-      console.log(res);
-    });
+  register() {
+    this.usersAction.register(this.user);
+    this.ngRedux
+      .select(state => state.users.userRegister)
+      .subscribe(userRegister => {
+        if (userRegister) {
+          this.router.navigateByUrl('/users/login');
+        }
+      });
   }
 }

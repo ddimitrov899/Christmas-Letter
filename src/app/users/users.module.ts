@@ -7,6 +7,7 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { UserAction } from './../store/users/users.action';
 import { UsersService } from './users.service';
 
 @NgModule({
@@ -15,13 +16,14 @@ import { UsersService } from './users.service';
     LoginComponent
   ],
   imports: [
-    CommonModule,
+  CommonModule,
     FormsModule,
     MaterializeModule
   ],
   exports: [],
   providers: [
-    UsersService
+    UsersService,
+    UserAction,
   ],
 })
 export class UserModule { }

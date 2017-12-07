@@ -3,7 +3,7 @@ import { ApiService } from '../core/api.service';
 import { LoginUser } from './login/login.user.model';
 import { RegisterUser } from './register/register.user.model';
 const registerUrlPath = 'auth/signup';
-const loginUrlPath = 'auth/sigin';
+const loginUrlPath = 'auth/login';
 
 @Injectable()
 export class UsersService {

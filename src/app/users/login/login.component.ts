@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginUser } from './login.user.model';
-import { UsersService } from './../users.service';
+import { UserAction } from '../../store/users/users.action';
+import { NgRedux } from 'ng2-redux';
+import { IAppState } from './../../store/app.state';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'letter-login',
@@ -11,12 +14,25 @@ export class LoginComponent implements OnInit {
 
   user: LoginUser = new LoginUser();
 
-  constructor(private userService: UsersService) { }
+  constructor(
+    private userAction: UserAction,
+    private router: Router,
+    private ngRedux: NgRedux<IAppState>
+  ) { }
 
   ngOnInit() {
   }
 
   login() {
-    this.userService.login(this.user);
+    this.userAction.login(this.user);
+    this.ngRedux
+      .select(state => state.users)
+      .subscribe(user => {
+        if (user.userAuthenticate) {
+          localStorage.setItem('token', user.token);
+          localStorage.setItem('family-name', user.lastname);
+          this.router.navigateByUrl('');
+        }
+      });
   }
 }

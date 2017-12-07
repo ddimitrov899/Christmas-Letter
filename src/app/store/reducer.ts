@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
-import { usersReducer } from './users/user.reducer';
+import { UsersReducer } from './users/user.reducer';
 import { IAppState } from './app.state';
+import { CoreReducer } from './core/core-reducer';
 
 export const reducer = combineReducers<IAppState> ({
-  users: usersReducer
+  users: UsersReducer,
+  core: CoreReducer
 });
