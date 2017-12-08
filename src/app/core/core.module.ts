@@ -6,10 +6,12 @@ import { AppRoutingModule } from './../app-routing.module';
 import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
 
+import { AuthService } from './auth.service';
 import { PrivateRoute } from './private.route';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { MessageHandlerComponent } from './message-handler/message-handler.component';
-import { AuthService } from './auth.service';
+import { StatsModule } from './../stats/stats.module';
 
 @NgModule({
   declarations: [
@@ -17,18 +19,20 @@ import { AuthService } from './auth.service';
     MessageHandlerComponent
   ],
   imports: [
-  CommonModule,
+CommonModule,
     AppRoutingModule,
     FormsModule,
-    MaterializeModule
-   ],
+    MaterializeModule,
+    StatsModule
+  ],
   exports: [
     NavbarComponent,
     MessageHandlerComponent,
   ],
   providers: [
     AuthService,
-    PrivateRoute
+    PrivateRoute,
   ],
 })
-export class CoreModule {}
+
+export class CoreModule { }

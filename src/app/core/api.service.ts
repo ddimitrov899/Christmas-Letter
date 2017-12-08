@@ -8,7 +8,8 @@ export class ApiService {
   private _url = 'http://localhost:5000/';
   constructor(private _http: Http) { }
   get(path) {
-
+    return this._http.get(`${this._url}${path}`)
+      .map(res => res.json());
   }
 
   post(path, data) {
@@ -25,7 +26,7 @@ export class ApiService {
       `${this._url}${path}`,
       JSON.stringify(data),
       requestOptions
-    )
+      )
       .map(res => res.json());
 
   }

@@ -3,3 +3,5 @@ export const USER_LOGIN = 'USER_LOGIN';
 
 export const MESSAGE = 'MESSAGE';
 
+export const GET_STATS = 'GET_STATS';
+

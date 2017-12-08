@@ -13,6 +13,7 @@ import { MaterializeModule } from 'angular2-materialize';
 import { AppComponent } from './app.component';
 
 import { UserModule } from './users/users.module';
+import { StatsModule } from './stats/stats.module';
 import { CoreModule } from './core/core.module';
 
 import { AuthService } from './core/auth.service';
@@ -25,14 +26,15 @@ import { LetterModule } from './letter/letter.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     MaterializeModule,
     HttpModule,
     NgReduxModule,
+    StatsModule,
     UserModule,
     CoreModule,
-    LetterModule
+    LetterModule,
   ],
   providers: [
     ApiService

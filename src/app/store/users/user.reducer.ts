@@ -24,7 +24,6 @@ function loginUser(state, action) {
   const result = action.result;
   const success = result.success;
   if (success) {
-    console.log(success);
     return Object.assign({}, state, {
       userAuthenticate: success,
       token: result.token,
