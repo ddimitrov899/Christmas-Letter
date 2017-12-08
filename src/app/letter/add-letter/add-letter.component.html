@@ -1,3 +1,40 @@
-<p>
-  add-letter works!
-</p>
+<div class="container">
+  <form #letterForm="ngForm" (submit)="sendLetter()">
+    <div class="form-group">
+      <textarea name="message" id="message" class="notes form-control" rows="3" [(ngModel)]="message.letter" #letter='ngModel'
+        required></textarea>
+    </div>
+    <div class="error" [hidden]='letter.valid || letter.pristine'>
+      <p>Letter is required!</p>
+    </div>
+    <div class="button">
+      <div class="right form-group">
+        <input type="number" id='age' name="age" class="form-control" placeholder="Your Age:" [(ngModel)]="message.age" #age='ngModel'
+          required />
+        <div class="error" [hidden]='age.valid || age.pristine'>
+          <p>Your Age is required!</p>
+        </div>
+      </div>
+      <div class="right form-group">
+        <input type="text" class="form-control" id='adress' name="adress" placeholder="Your City:" [(ngModel)]="message.city" #city='ngModel'
+          required />
+        <div class="error" [hidden]='city.valid || city.pristine'>
+          <p>Your City is required!</p>
+        </div>
+      </div>
+      <div class="right form-group">
+        <input type="text" id='name' name="name" class="form-control" placeholder="Your Name:" [(ngModel)]="message.name" #name='ngModel'
+          required />
+        <div class="error" [hidden]='name.valid || name.pristine'>
+          <p>Your Name is required!</p>
+        </div>
+      </div>
+      <label for="button">
+        <input type="submit" value="Send Message" class="btn btn-success" />
+        <!-- <svg>
+      <rect width="20" height="20" style="background-color: transperant;"></rect>
+    </svg> -->
+      </label>
+    </div>
+  </form>
+</div>

@@ -23,7 +23,6 @@ export class StatsComponent implements OnInit {
     this.ngRedux
       .select(state => state.stats)
       .subscribe(stats => {
-        console.log(stats);
         if (stats.statsSuccess) {
           this.usersNumber = stats.users;
           this.letterNumber = stats.sendLetters;
