@@ -16,13 +16,13 @@
     </ul>
     <ul *ngIf="authenticated" class="right hide-on-med-and-down">
       <li><a routerLink="/letter/add">Send Letter</a></li>
-      <li>Hello Family {{familyname}}</li>
       <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
+      <li>Hello Family {{familyname}}</li>
     </ul>
     <ul *ngIf="authenticated" class="side-nav" id="mobile-demo">
         <li><a routerLink="/letter/add">Send Letter</a></li>
+        <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
         <li>Hello Family {{familyname}}</li>
-      <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
     </ul>
   </div>
 </nav>

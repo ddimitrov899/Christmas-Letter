@@ -11,7 +11,7 @@ import { StatsService } from './stats.service';
 })
 export class StatsComponent implements OnInit {
 
-  userNumber = 0;
+  usersNumber = 0;
   letterNumber = 0;
   constructor(
     private statsActions: StatsActions,
@@ -23,8 +23,9 @@ export class StatsComponent implements OnInit {
     this.ngRedux
       .select(state => state.stats)
       .subscribe(stats => {
+        console.log(stats);
         if (stats.statsSuccess) {
-          this.userNumber = stats.users;
+          this.usersNumber = stats.users;
           this.letterNumber = stats.sendLetters;
         }
       });
