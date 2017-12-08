@@ -1,7 +1,8 @@
 div.body-main {
   background-image: url('https://wallpapercave.com/wp/icdoPOT.gif');
-  background-size: 100% 100%;
+  background-size: 70% 100%;
   background-repeat: no-repeat;
+  background-position: center;
   height: 100%;
 
   .container {
@@ -45,4 +46,11 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
   color: #235B1A;
   font-weight: 700;
+}
+@media screen and (max-width: 1000px){
+  div.body-main {
+    background-size: 100% 100%;
+    backface-visibility: initial;
+
+  }
 }

@@ -4,6 +4,7 @@ import { UserAction } from '../../store/users/users.action';
 import { NgRedux } from 'ng2-redux';
 import { IAppState } from './../../store/app.state';
 import { Router } from '@angular/router';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'letter-login',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private userAction: UserAction,
+    private authService: AuthService,
     private router: Router,
     private ngRedux: NgRedux<IAppState>
   ) { }
@@ -29,8 +31,8 @@ export class LoginComponent implements OnInit {
       .select(state => state.users)
       .subscribe(user => {
         if (user.userAuthenticate) {
-          localStorage.setItem('token', user.token);
-          localStorage.setItem('family-name', user.lastname);
+          this.authService.saveUser(user.lastname);
+          this.authService.authenticateUser(user.token);
           this.router.navigateByUrl('');
         }
       });

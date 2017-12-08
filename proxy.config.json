@@ -1,0 +1,12 @@
+{
+  "/cache/*": {
+    "target": "http://bg.allfont.net",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/cache/*": {
+    "target": "http://allfont.ru",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

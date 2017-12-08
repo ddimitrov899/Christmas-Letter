@@ -1,6 +1,6 @@
 import { initialState } from './core-state';
 import { MESSAGE } from '../action-types';
-export function CoreReducer(state = initialState, action) {
+function setMessage(state, action) {
   const result = action.result;
 
   if (result) {
@@ -20,4 +20,22 @@ export function CoreReducer(state = initialState, action) {
     }
   }
   return state;
+}
+
+function clearMessage() {
+  const clear = {
+    isSuccess: false,
+    message: null
+  };
+
+  return clear;
+}
+
+export function CoreReducer(state = initialState, action) {
+  if (action.type === MESSAGE) {
+    return clearMessage();
+  } else {
+    return setMessage(state, action);
+  }
+
 }

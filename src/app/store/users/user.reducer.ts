@@ -23,7 +23,6 @@ function registrationUser(state, action) {
 function loginUser(state, action) {
   const result = action.result;
   const success = result.success;
-  console.log(action);
   if (success) {
     console.log(success);
     return Object.assign({}, state, {

@@ -8,6 +8,7 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { MessageHandlerComponent } from './message-handler/message-handler.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,10 @@ import { MessageHandlerComponent } from './message-handler/message-handler.compo
    ],
   exports: [
     NavbarComponent,
-    MessageHandlerComponent
+    MessageHandlerComponent,
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
 })
 export class NavbarModule {}

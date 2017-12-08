@@ -1,4 +1,10 @@
+@import url('http://bg.allfont.net/allfont.css?fonts=andantino-script');
+
 nav {
+  .brand-logo{
+    font-family: 'Andantino script', arial;
+    font-size: 40px;
+  }
   background-color: #235B1A;
   a:hover {
     color: #8F1308;
