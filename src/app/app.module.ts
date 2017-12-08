@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { NgReduxModule, NgRedux } from 'ng2-redux';
 import { store, IAppState } from './store';
-import { Router, NavigationStart } from '@angular/router';
+import { Router } from '@angular/router';
 
 import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
@@ -13,11 +13,12 @@ import { MaterializeModule } from 'angular2-materialize';
 import { AppComponent } from './app.component';
 
 import { UserModule } from './users/users.module';
-import { NavbarModule } from './core/navbar.module';
+import { CoreModule } from './core/core.module';
 
 import { AuthService } from './core/auth.service';
 import { ApiService } from './core/api.service';
-import { MESSAGE, USER_LOGIN } from './store/action-types';
+import { config } from './core/config';
+import { LetterModule } from './letter/letter.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MESSAGE, USER_LOGIN } from './store/action-types';
     HttpModule,
     NgReduxModule,
     UserModule,
-    NavbarModule
+    CoreModule,
+    LetterModule
   ],
   providers: [
     ApiService
@@ -38,32 +40,10 @@ import { MESSAGE, USER_LOGIN } from './store/action-types';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private ngRedux: NgRedux<IAppState>,
+  constructor(
+    private ngRedux: NgRedux<IAppState>,
     private authServece: AuthService,
     private router: Router) {
-    this.ngRedux.provideStore(store);
-    this.router.events.subscribe(ev => {
-      if (ev instanceof NavigationStart) {
-        this.ngRedux.dispatch({
-          type: MESSAGE
-        });
-      }
-    });
-
-    if (this.authServece.isUserAuthenticated()) {
-      const token = this.authServece.getToken();
-      const familyname = this.authServece.getUser();
-
-      this.ngRedux.dispatch({
-        type: USER_LOGIN,
-        result: {
-          success: true,
-          token,
-          user: {
-            name: familyname
-          }
-        }
-      });
-    }
+    config(store, this.ngRedux, this.authServece, this.router);
   }
 }

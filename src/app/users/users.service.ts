@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { ApiService } from '../core/api.service';
 import { LoginUser } from './login/login.user.model';
 import { RegisterUser } from './register/register.user.model';
@@ -10,8 +12,9 @@ const loginUrlPath = 'auth/login';
 export class UsersService {
 
   constructor(
-    protected _api: ApiService,
-    protected authService: AuthService
+    private _api: ApiService,
+    private router: Router,
+    private authService: AuthService
   ) { }
   login(user: LoginUser) {
     return this._api.post(loginUrlPath, user);
@@ -24,5 +27,6 @@ export class UsersService {
   logout() {
     this.authService.removeUser();
     this.authService.deauthenticateUser();
+    this.router.navigateByUrl('users/login');
   }
 }

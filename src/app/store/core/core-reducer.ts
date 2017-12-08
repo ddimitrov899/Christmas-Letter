@@ -22,18 +22,17 @@ function setMessage(state, action) {
   return state;
 }
 
-function clearMessage() {
-  const clear = {
+function clearMessage(state, action) {
+
+  return Object.assign({}, state, {
     isSuccess: false,
     message: null
-  };
-
-  return clear;
+  });
 }
 
 export function CoreReducer(state = initialState, action) {
   if (action.type === MESSAGE) {
-    return clearMessage();
+    return clearMessage(state, action);
   } else {
     return setMessage(state, action);
   }
