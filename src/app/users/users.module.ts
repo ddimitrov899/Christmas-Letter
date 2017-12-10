@@ -17,7 +17,7 @@ import { AuthService } from '../core/auth.service';
     LoginComponent
   ],
   imports: [
-  CommonModule,
+    CommonModule,
     FormsModule,
     MaterializeModule
   ],

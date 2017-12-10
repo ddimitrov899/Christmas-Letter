@@ -22,9 +22,10 @@ export class AddLetterComponent {
   sendLetter() {
     this.letterAction.sendLetter(this.message);
     this.ngRedux
-      .select(state => state.addLetter)
+      .select(state => state.addLetters )
       .subscribe(addLetter => {
-        if (addLetter.addSuccess) {
+        if (addLetter.getSuccess) {
+          console.log(addLetter);
           this.router.navigateByUrl('');
         }
       });

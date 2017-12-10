@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../core/api.service';
 
-const sendLetterPath = '/letter/send';
-const getAllLetterPath = '/letter/get';
-const getLetterPath = '/letter/get?id=';
+const sendLetterPath = 'letter/create';
+const getAllLetterPath = 'letter/all';
+const getLetterPath = 'letter/:id';
 
 @Injectable()
 export class LetterService {
@@ -15,10 +15,10 @@ export class LetterService {
   }
 
   getById(id) {
-    return this.api.get(`${getLetterPath}${id}`);
+    return this.api.get(`${getLetterPath.replace(':id', '')}${id}`);
   }
 
   send(letter) {
-    return this.api.post(sendLetterPath, letter);
+    return this.api.post(sendLetterPath, letter, true);
   }
 }

@@ -1,20 +1,33 @@
 import { SEND_LETTER, GET_LETTERS, GET_LETTER } from '../action-types';
-import { initialAddLetterState } from './letter-state';
+import { initialAddLetterState, initialGetLettersState, initialGetLetterState } from './letter-state';
 
-
-export function LettersReducer(state = initialAddLetterState, action) {
+export function AddLettersReducer(state = initialAddLetterState, action) {
   switch (action.type) {
     case SEND_LETTER:
       return Object.assign({}, state, {
-        addSuccess: true
+        getSuccess: action.result.success
       });
+    default:
+      return state;
+  }
+}
+
+export function GetLettersReducer(state = initialGetLettersState, action) {
+  switch (action.type) {
     case GET_LETTERS:
       return Object.assign({}, state, {
         getSuccess: true,
-        letters: action.resut.letters,
+        letters: action.result,
       });
+    default:
+      return state;
+  }
+}
+
+export function GetLetterReducer(state = initialGetLetterState, action) {
+  switch (action.type) {
     case GET_LETTER:
-      const result = action.resut;
+      const result = action.result;
       return Object.assign({}, state, {
         getSuccess: true,
         letter: result.letter,

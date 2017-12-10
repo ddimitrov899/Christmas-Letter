@@ -1,6 +1,7 @@
 export interface IAddLetterState {
-  addSuccess: boolean;
+  getSuccess: boolean;
 }
+
 export interface IGetLetterState {
   getSuccess: boolean;
   letter: string;
@@ -15,7 +16,7 @@ export interface IGetLettersState {
 }
 
 export const initialAddLetterState: IAddLetterState = {
-  addSuccess: false
+  getSuccess: false
 };
 
 export const initialGetLetterState: IGetLetterState = {

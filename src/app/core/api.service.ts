@@ -1,33 +1,29 @@
-import { Injectable } from '@angular/core';
-import { Http, RequestOptions, Headers } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+// import { RequestOptions, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/map';
+import {AuthService} from './auth.service';
 
 @Injectable()
 export class ApiService {
-  private _url = 'http://localhost:5000/';
-  constructor(private _http: Http) { }
-  get(path) {
-    return this._http.get(`${this._url}${path}`)
-      .map(res => res.json());
+  private _url = 'http://localhost:8080/';
+
+  constructor(private _http: HttpClient,
+              private authService: AuthService) {
   }
 
-  post(path, data) {
-    const headers = new Headers({
-      'Content-Type': 'application/json'
-    });
+  get(path) {
+    return this._http.get(`${this._url}${path}`);
+  }
 
-    const requestOptions = new RequestOptions({
-      headers: headers
-    });
-
+  post(path, data, auth = false) {
     return this._http
       .post(
-      `${this._url}${path}`,
-      JSON.stringify(data),
-      requestOptions
-      )
-      .map(res => res.json());
+        `${this._url}${path}`,
+        JSON.stringify(data),
+        {headers: auth ? new HttpHeaders().set('Authorization', `Basic ${this.authService.getToken()}`) : new HttpHeaders()}
+      );
 
   }
 }

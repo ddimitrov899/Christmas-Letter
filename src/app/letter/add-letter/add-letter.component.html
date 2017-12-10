@@ -30,7 +30,8 @@
         </div>
       </div>
       <label for="button">
-        <input type="submit" value="Send Message" class="btn btn-success" />
+        <input type="submit"  value="Send Letter" class="btn btn-success"
+        [disabled]='!letterForm.form.valid'/>
         <!-- <svg>
       <rect width="20" height="20" style="background-color: transperant;"></rect>
     </svg> -->

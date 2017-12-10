@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 import { NgReduxModule, NgRedux } from 'ng2-redux';
 import { store, IAppState } from './store';
@@ -13,7 +13,6 @@ import { MaterializeModule } from 'angular2-materialize';
 import { AppComponent } from './app.component';
 
 import { UserModule } from './users/users.module';
-import { StatsModule } from './stats/stats.module';
 import { CoreModule } from './core/core.module';
 
 import { AuthService } from './core/auth.service';
@@ -23,15 +22,14 @@ import { LetterModule } from './letter/letter.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
   BrowserModule,
     AppRoutingModule,
     MaterializeModule,
-    HttpModule,
+    HttpClientModule,
     NgReduxModule,
-    StatsModule,
     UserModule,
     CoreModule,
     LetterModule,

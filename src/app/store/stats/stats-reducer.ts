@@ -7,7 +7,7 @@ export function StatsReducer(state = initialState, action) {
       return Object.assign({}, state, {
         statsSuccess: true,
         users: action.result.users,
-        sendLetter: action.result.letters
+        sendLetters: action.result.sendLetters
       });
 
     default:
