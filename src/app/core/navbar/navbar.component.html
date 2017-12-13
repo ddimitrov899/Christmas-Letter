@@ -1,9 +1,11 @@
 <nav>
-  <div class="nav-wrapper">
-    <a routerLink="/" class="brand-logo">Dear Santa</a>
+  <div class="nav-wrapper container">
+    <a routerLink="/" class="brand-logo">Dear
+      Santa<img src={{img}} alt="logo" class="logo"></a>
     <a href="javascript:void(0)" data-activates="mobile-demo" class="button-collapse"
-    materialize="sideNav"
-    [materializeParams]="[{menuWidth: 300,edge: 'left', closeOnClick: true, draggable: true}]"><i class="material-icons">menu</i></a>
+       materialize="sideNav"
+       [materializeParams]="[{menuWidth: 300,edge: 'left', closeOnClick: true, draggable: true}]"><i
+      class="material-icons">menu</i></a>
     <letter-stats></letter-stats>
 
     <ul *ngIf="!authenticated" class="right hide-on-med-and-down">
@@ -20,9 +22,9 @@
       <li>Hello Family {{familyname}}</li>
     </ul>
     <ul *ngIf="authenticated" class="side-nav" id="mobile-demo">
-        <li><a routerLink="/letter/add">Send Letter</a></li>
-        <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
-        <li>Hello Family {{familyname}}</li>
+      <li><a routerLink="/letter/add">Send Letter</a></li>
+      <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
+      <li>Hello Family {{familyname}}</li>
     </ul>
   </div>
 </nav>

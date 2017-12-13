@@ -4,6 +4,11 @@ nav {
   .brand-logo{
     font-family: 'Andantino script', arial;
     font-size: 40px;
+    & .logo {
+      width: 50%;
+      margin-left: -100px;
+      margin-top: -20px;
+    }
   }
   background-color: #235B1A;
   a:hover {

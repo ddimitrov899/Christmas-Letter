@@ -1,31 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 
-import { NgReduxModule, NgRedux } from 'ng2-redux';
-import { store, IAppState } from './store';
-import { Router } from '@angular/router';
+import {NgReduxModule, NgRedux} from 'ng2-redux';
+import {store, IAppState} from './store';
+import {Router} from '@angular/router';
 
 import 'materialize-css';
-import { MaterializeModule } from 'angular2-materialize';
+import {MaterializeModule} from 'angular2-materialize';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 
-import { UserModule } from './users/users.module';
-import { CoreModule } from './core/core.module';
+import {UserModule} from './users/users.module';
+import {CoreModule} from './core/core.module';
 
-import { AuthService } from './core/auth.service';
-import { ApiService } from './core/api.service';
-import { config } from './core/config';
-import { LetterModule } from './letter/letter.module';
+import {AuthService} from './core/auth.service';
+import {ApiService} from './core/api.service';
+import {config} from './core/config';
+import {LetterModule} from './letter/letter.module';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     MaterializeModule,
     HttpClientModule,
@@ -40,10 +40,9 @@ import { LetterModule } from './letter/letter.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(
-    private ngRedux: NgRedux<IAppState>,
-    private authServece: AuthService,
-    private router: Router) {
+  constructor(private ngRedux: NgRedux<IAppState>,
+              private authServece: AuthService,
+              private router: Router) {
     config(store, this.ngRedux, this.authServece, this.router);
   }
 }

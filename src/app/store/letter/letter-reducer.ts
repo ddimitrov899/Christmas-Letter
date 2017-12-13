@@ -31,9 +31,9 @@ export function GetLetterReducer(state = initialGetLetterState, action) {
       return Object.assign({}, state, {
         getSuccess: true,
         letter: result.letter,
-        name: result.name,
+        createdBy: result.createdBy,
         age: result.age,
-        city: result.city,
+        location: result.location,
       });
     default:
       return state;

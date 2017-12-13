@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: #e10019; /* For browsers that do not support gradients */
+  background:  url("./app/resurces/pattern.png"), -webkit-radial-gradient(#e10019, #770000); /* Safari 5.1 to 6.0 */
+  background:  url("./app/resurces/pattern.png"), -o-radial-gradient(#e10019, #770000); /* For Opera 11.6 to 12.0 */
+  background:  url("./app/resurces/pattern.png"), -moz-radial-gradient(#e10019, #770000); /* For Firefox 3.6 to 15 */
+  background:  url("./app/resurces/pattern.png"), radial-gradient(#e10019, #770000); /* Standard syntax */
+
+}
 a, a:hover, a:focus, a:active {
   text-decoration: none;
 }

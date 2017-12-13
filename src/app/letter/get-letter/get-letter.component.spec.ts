@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GetAllLetterComponent } from './get-all-letter.component';
+import { GetAllLetterComponent } from './get-letter.component';
 
 describe('GetAllLetterComponent', () => {
   let component: GetAllLetterComponent;

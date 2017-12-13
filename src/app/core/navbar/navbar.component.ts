@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgRedux } from 'ng2-redux';
 import { IAppState } from '../../store';
 import { UsersService } from '../../users/users.service';
+import * as logo from './../../resurces/logo_santa.svg';
 
 @Component({
   selector: 'letter-navbar',
@@ -11,6 +12,7 @@ import { UsersService } from '../../users/users.service';
 export class NavbarComponent implements OnInit {
   authenticated = false;
   familyname: string = null;
+  img = logo;
 
   constructor(
     private ngRedux: NgRedux<IAppState>,

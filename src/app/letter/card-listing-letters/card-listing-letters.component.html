@@ -1,0 +1,13 @@
+<div class="container">
+  <ngui-map
+    zoom="2"
+    default-style="false"
+    style="height: 480px; display:block;"
+    center="Bulgaria, Sofia"
+    mapTypeId="satellite">
+    <marker *ngFor="let pos of positions"
+            [position]="pos.location"
+            (click)="onMapClick(pos._id)"></marker>
+  </ngui-map>
+  <letter-get-letter></letter-get-letter>
+</div>

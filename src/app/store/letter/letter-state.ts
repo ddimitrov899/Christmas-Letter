@@ -5,9 +5,9 @@ export interface IAddLetterState {
 export interface IGetLetterState {
   getSuccess: boolean;
   letter: string;
-  name: string;
+  createdBy: string;
   age: number;
-  city: string;
+  location: string;
 }
 
 export interface IGetLettersState {
@@ -22,9 +22,9 @@ export const initialAddLetterState: IAddLetterState = {
 export const initialGetLetterState: IGetLetterState = {
   getSuccess: false,
   letter: 'Dear Santa, ',
-  name: null,
+  createdBy: null,
   age: 0,
-  city: null,
+  location: null,
 };
 
 export const initialGetLettersState: IGetLettersState = {
