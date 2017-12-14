@@ -11,7 +11,7 @@ import { PrivateRoute } from './private.route';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { MessageHandlerComponent } from './message-handler/message-handler.component';
-import { StatsModule } from './../stats/stats.module';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +22,7 @@ import { StatsModule } from './../stats/stats.module';
 CommonModule,
     AppRoutingModule,
     FormsModule,
-    MaterializeModule,
-    StatsModule
+    MaterializeModule
   ],
   exports: [
     NavbarComponent,

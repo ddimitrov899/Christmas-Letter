@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12" *ngIf="letter.location">
+      <img [src]="imageArrow" alt="arrow-up" class="up-arrow">
       <div class="card">
         <div class="card-block">
-          <h6 class="card-subtitle mb-2 text-muted">Dear Santa, </h6>
+          <h4 class="card-subtitle mb-2 text-muted">Dear Santa, </h4>
           <p class="card-text">
             {{letter.letter | removeStringDearSanta}}
           </p>

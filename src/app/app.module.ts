@@ -19,6 +19,7 @@ import {AuthService} from './core/auth.service';
 import {ApiService} from './core/api.service';
 import {config} from './core/config';
 import {LetterModule} from './letter/letter.module';
+import { StatsModule } from './stats/stats.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {LetterModule} from './letter/letter.module';
     UserModule,
     CoreModule,
     LetterModule,
+    StatsModule
   ],
   providers: [
     ApiService

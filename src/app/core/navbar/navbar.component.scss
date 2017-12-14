@@ -10,6 +10,28 @@ nav {
       margin-top: -20px;
     }
   }
+
+  .login {
+    background: url("./../../resurces/4.png") no-repeat;
+    background-size: 65%;
+  }
+  .register {
+    background: url("./../../resurces/5.png") no-repeat;
+    background-size: 80%;
+  }
+  .send-letter {
+    background: url("./../../resurces/2.png") no-repeat;
+    background-size: 90% 100%;
+  }
+  .logout {
+    background: url("./../../resurces/3.png") no-repeat;
+    background-size: 75% 100%;
+  }
+  & .login, & .register, & .send-letter, & .logout {
+    padding-top: 20px;
+    padding-left: 0;
+    height: 50px;
+  }
   background-color: #235B1A;
   a:hover {
     color: #8F1308;

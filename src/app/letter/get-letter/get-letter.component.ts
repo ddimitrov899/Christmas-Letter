@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
 import {NgRedux} from 'ng2-redux';
 import {IAppState} from '../../store';
-import {LetterAction} from '../../store/letter/letter-action';
 import {LetterModel} from '../leter.model';
+import  * as imageArrow from './../../../assets/img/agel-2.png';
 
 @Component({
   selector: 'letter-get-letter',
@@ -12,7 +11,7 @@ import {LetterModel} from '../leter.model';
 })
 export class GetLetterComponent implements OnInit {
   letter: LetterModel = new LetterModel();
-
+  imageArrow = imageArrow;
   constructor(private ngRedux: NgRedux<IAppState>) {
   }
 

@@ -14,7 +14,6 @@ export function config(store, ngRedux, authService, router) {
   if (authService.isUserAuthenticated()) {
     const token = authService.getToken();
     const familyname = authService.getUser();
-
     ngRedux.dispatch({
       type: USER_LOGIN,
       result: {

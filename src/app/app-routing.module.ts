@@ -5,7 +5,6 @@ import { PrivateRoute } from './core/private.route';
 import { RegisterComponent } from './users/register/register.component';
 import { LoginComponent } from './users/login/login.component';
 import { AddLetterComponent } from './letter/add-letter/add-letter.component';
-import {GetAllLetterComponent} from './letter/get-letter/get-letter.component';
 import {CardListingLettersComponent} from './letter/card-listing-letters/card-listing-letters.component';
 
 const routes: Routes = [

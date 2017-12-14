@@ -4,6 +4,7 @@ import { UserAction } from '../../store/users/users.action';
 import { NgRedux } from 'ng2-redux';
 import { IAppState } from '../../store';
 import { Router } from '@angular/router';
+import {StatsActions} from '../../store/stats/stats-actions';
 
 @Component({
   selector: 'letter-register',
@@ -14,6 +15,7 @@ export class RegisterComponent implements OnInit {
 
   user: RegisterUser = new RegisterUser();
   constructor(
+    private statsActions: StatsActions,
     private usersAction: UserAction,
     private router: Router,
     private ngRedux: NgRedux<IAppState>) { }
@@ -22,6 +24,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+    this.statsActions.getStats();
     this.usersAction.register(this.user);
     this.ngRedux
       .select(state => state.users.userRegister)

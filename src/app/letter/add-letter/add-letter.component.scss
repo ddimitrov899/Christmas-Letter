@@ -1,91 +1,5 @@
 @import url(http://bg.allfont.net/allfont.css?fonts=mon-amour-one-medium);
-//form {
-//  .form-group {
-//    font-family: 'Mon Amour One Medium', arial, serif;
-//    margin: 0 auto;
-//    width: 50%;
-//    .img-bcg-letter {
-//      margin-top: 15px;
-//    }
-//  }
-//  .bottom {
-//    & .right {
-//      position: relative;
-//      -webkit-transform: rotate(-9.5deg);
-//      -moz-transform: rotate(-9.5deg);
-//      input {
-//        border-bottom: 3px solid #816e6c;
-//        width: 41% !important;
-//        margin: 0 90px;
-//        height: 20px;
-//      }
-//    }
-//    .age-input {
-//      bottom: 230px;
-//    }
-//    .name-input {
-//      bottom: 278px;
-//    }
-//    .address-input {
-//      bottom: 200px;
-//      left: 410px;
-//      width: 20%;
-//    }
-//    .country-input {
-//      bottom: 180px;
-//      left: 570px;
-//      width: 25%;
-//    }
-//  }
-//  #button {
-//    -webkit-transform: rotate(-20deg);
-//    -moz-transform: rotate(-20deg);
-//    position: relative;
-//    bottom: 175px;
-//    left: 444px;
-//    width: 220px;
-//    height: 60px;
-//    background: transparent;
-//    font-size: 40px;
-//    font-family: serif;
-//  }
-//  .notes {
-//    position: absolute;
-//    top: 245px;
-//    left: 720px;
-//    /* right: 0; */
-//    background-attachment: local;
-//    background: linear-gradient(to right, rgba(255, 255, 255, 0) 10px, transparent 10px), linear-gradient(to left, rgba(255, 255, 255, 0) 10px, transparent 10px), repeating-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 31px, #ccc 31px, #ccc 32px, white 32px);
-//    line-height: 31px;
-//    /* padding: 8px 10px; */
-//    resize: none;
-//    width: 500px;
-//    height: 245px;
-//    border: 0;
-//    font-size: 18px;
-//    &:focus {
-//      color: #2b2b2b;
-//      background-color: transparent;
-//      border-color: transparent;
-//      outline: 0;
-//      box-shadow: 0 0 0 0.2rem rgba(0,123,255, 0)
-//    }
-//  }
-//
-//  .button .form-group > .form-control {
-//    width: 95%;
-//  }
-//  .error {
-//    color: darkred;
-//    &.error-letter {
-//      position: absolute;
-//      top: 490px;
-//      left: 47%;
-//      font-size: 18px;
-//      font-weight: 700;
-//    }
-//  }
-//}
+
 .container {
   .bcg-image-letter {
     min-height: 920px;
@@ -101,7 +15,7 @@
   .letter-note {
     position: relative;
     top: 190px;
-    left: 40px;
+    left: -32px;
   }
   .notes {
     margin: 0 auto;

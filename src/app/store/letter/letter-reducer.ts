@@ -5,7 +5,7 @@ export function AddLettersReducer(state = initialAddLetterState, action) {
   switch (action.type) {
     case SEND_LETTER:
       return Object.assign({}, state, {
-        getSuccess: action.result.success
+        getSuccess: true
       });
     default:
       return state;

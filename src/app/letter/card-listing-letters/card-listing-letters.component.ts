@@ -3,6 +3,7 @@ import {LetterAction} from '../../store/letter/letter-action';
 import {IAppState} from '../../store';
 import {NgRedux} from 'ng2-redux';
 import {Router} from '@angular/router';
+import {StatsActions} from '../../store/stats/stats-actions';
 
 @Component({
   selector: 'letter-card-listing-letters',
@@ -13,6 +14,7 @@ export class CardListingLettersComponent implements OnInit {
   public positions = [];
 
   constructor(
+    private statsActions: StatsActions,
     private letterAction: LetterAction,
     private router: Router,
     private ngRedux: NgRedux<IAppState>
@@ -20,6 +22,7 @@ export class CardListingLettersComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.statsActions.getStats();
     this.letterAction.getAllLetters();
     this.ngRedux
       .select(state => state.getLetters)

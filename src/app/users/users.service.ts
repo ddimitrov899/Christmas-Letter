@@ -27,6 +27,7 @@ export class UsersService {
   logout() {
     this.authService.deauthenticateUser();
     this.authService.removeUser();
+    window.location.reload();
     this.router.navigateByUrl('users/login');
   }
 }

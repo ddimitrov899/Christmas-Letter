@@ -39,6 +39,7 @@ export class AddLetterComponent {
     this.ngRedux
       .select(state => state.addLetters )
       .subscribe(addLetter => {
+        console.log(addLetter);
         if (addLetter.getSuccess) {
           this.router.navigateByUrl('');
         }
