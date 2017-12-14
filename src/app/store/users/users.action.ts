@@ -16,11 +16,11 @@ export class UserAction {
     this.usersService
       .register(user)
       .subscribe(result => {
-          this.ngRedux.dispatch({
-            type: USER_REGISTER,
-            result
-          });
+        this.ngRedux.dispatch({
+          type: USER_REGISTER,
+          result
         });
+      });
   }
 
   login(user: LoginUser) {
@@ -32,5 +32,8 @@ export class UserAction {
           result
         });
       });
+  }
+  isAuthMe (email) {
+    return this.usersService.isAuthMe(email);
   }
 }

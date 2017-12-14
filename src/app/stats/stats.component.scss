@@ -1,9 +1,10 @@
 
 .stats {
-  display: flex;
+  margin: 20px auto 0 auto;
+  text-align: end;
   p {
-    margin: 0 auto;
-    font-size: 24px;
+    margin: 0;
+    font-size: 18px;
     color: white;
   }
 }

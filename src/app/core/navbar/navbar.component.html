@@ -1,28 +1,32 @@
 <nav>
   <div class="nav-wrapper container">
-    <a routerLink="/" class="brand-logo">Dear
-      Santa<img src={{img}} alt="logo" class="logo"></a>
+    <a routerLink="/" class="brand-logo">
+      <img src={{img}} alt="Dear Santa Logo" class="logo"></a>
     <a href="javascript:void(0)" data-activates="mobile-demo" class="button-collapse"
        materialize="sideNav"
        [materializeParams]="[{menuWidth: 300,edge: 'left', closeOnClick: true, draggable: true}]"><i
       class="material-icons">menu</i></a>
     <ul *ngIf="!authenticated" class="right hide-on-med-and-down">
+      <li><a routerLink="/" class="home">Home</a></li>
       <li><a routerLink="/users/login" class="login">Login</a></li>
       <li><a routerLink="/users/register" class="register">Register</a></li>
     </ul>
     <ul *ngIf="!authenticated" class="side-nav" id="mobile-demo">
+      <li><a routerLink="/" class="home">Home</a></li>
       <li><a routerLink="/users/login">Login</a></li>
       <li><a routerLink="/users/register">Register</a></li>
     </ul>
     <ul *ngIf="authenticated" class="right hide-on-med-and-down">
+      <li><a routerLink="/" class="home">Home</a></li>
       <li><a routerLink="/letter/add" class="send-letter">Write Letter</a></li>
       <li><a href="javascript:void(0)" (click)="logout()" class="logout">Logout</a></li>
-      <li>Hello Family {{familyname}}</li>
+      <li>Hello Family {{familiar}}</li>
     </ul>
     <ul *ngIf="authenticated" class="side-nav" id="mobile-demo">
-      <li><a routerLink="/letter/add" >Write Letter</a></li>
+      <li><a routerLink="/" class="home">Home</a></li>
+      <li><a routerLink="/letter/add">Write Letter</a></li>
       <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
-      <li>Hello Family {{familyname}}</li>
+      <li>Hello Family {{familiar}}</li>
     </ul>
   </div>
 </nav>

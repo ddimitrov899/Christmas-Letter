@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GetLetterComponent } from './get-letter.component';
+import { ListAllLettersComponent } from './list-all-letters.component';
 
-describe('GetLetterComponent', () => {
-  let component: GetLetterComponent;
-  let fixture: ComponentFixture<GetLetterComponent>;
+describe('ListAllLettersComponent', () => {
+  let component: ListAllLettersComponent;
+  let fixture: ComponentFixture<ListAllLettersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GetLetterComponent ]
+      declarations: [ ListAllLettersComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GetLetterComponent);
+    fixture = TestBed.createComponent(ListAllLettersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

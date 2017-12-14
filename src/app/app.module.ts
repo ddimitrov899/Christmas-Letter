@@ -20,6 +20,7 @@ import {ApiService} from './core/api.service';
 import {config} from './core/config';
 import {LetterModule} from './letter/letter.module';
 import { StatsModule } from './stats/stats.module';
+import {AdminModule} from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { StatsModule } from './stats/stats.module';
     UserModule,
     CoreModule,
     LetterModule,
-    StatsModule
+    StatsModule,
+    AdminModule
   ],
   providers: [
     ApiService

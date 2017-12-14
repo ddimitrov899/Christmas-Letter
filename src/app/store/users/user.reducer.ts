@@ -27,7 +27,8 @@ function loginUser(state, action) {
     return Object.assign({}, state, {
       userAuthenticate: success,
       token: result.token,
-      lastname: result.user.name
+      familyName: result.user.name,
+      email: result.user.email
     });
   }
   return Object.assign({}, state, {

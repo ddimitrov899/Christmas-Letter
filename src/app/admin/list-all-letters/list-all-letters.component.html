@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let letter of letters">
+      <form #apruveForm="ngForm" class="card">
+        <div class="card-block">
+          <h4 class="card-subtitle mb-2 text-muted">Dear Santa, </h4>
+          <p class="card-text">
+            {{letter.letter | removeStringDearSanta}}
+          </p>
+          <div class="right-align">
+            {{letter.createdBy}}, {{letter.age}}
+          </div>
+          <div class="right-align">
+            {{letter.location}}
+          </div>
+        </div>
+        <input type="button"  (click)="sendEmail(letter._id, letter.email)" value="Send e-mail">
+      </form>
+    </div>
+  </div>
+</div>

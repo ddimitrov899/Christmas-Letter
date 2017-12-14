@@ -9,7 +9,6 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { UserAction } from './../store/users/users.action';
 import { UsersService } from './users.service';
-import { AuthService } from '../core/auth.service';
 
 @NgModule({
   declarations: [

@@ -9,4 +9,6 @@ export const GET_LETTERS = 'GET_LETTERS';
 export const GET_LETTER = 'GET_LETTER';
 export const SEND_LETTER = 'SEND_LETTER';
 
+export const SEND_EMAIL_LETTER = 'SEND_EMAIL_LETTER';
+
 

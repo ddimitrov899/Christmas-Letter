@@ -3,11 +3,13 @@ export interface IAddLetterState {
 }
 
 export interface IGetLetterState {
+  _id?: number;
   getSuccess: boolean;
   letter: string;
   createdBy: string;
   age: number;
   location: string;
+  email: string;
 }
 
 export interface IGetLettersState {
@@ -25,6 +27,8 @@ export const initialGetLetterState: IGetLetterState = {
   createdBy: null,
   age: 0,
   location: null,
+  _id: 0,
+  email: null
 };
 
 export const initialGetLettersState: IGetLettersState = {

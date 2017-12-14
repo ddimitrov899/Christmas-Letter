@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgRedux } from 'ng2-redux';
 import { IAppState } from '../../store';
 import { UsersService } from '../../users/users.service';
-import * as logo from './../../resurces/logo_santa.svg';
+
 
 @Component({
   selector: 'letter-navbar',
@@ -11,8 +11,8 @@ import * as logo from './../../resurces/logo_santa.svg';
 })
 export class NavbarComponent implements OnInit {
   authenticated = false;
-  familyname: string = null;
-  img = logo;
+  familiar: string = null;
+  img = 'assets/img/logo.png';
 
   constructor(
     private ngRedux: NgRedux<IAppState>,
@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
       .select(state => state.users)
       .subscribe(users => {
         this.authenticated = users.userAuthenticate;
-        this.familyname = users.lastname;
+        this.familiar = users.familyName;
       });
   }
 

@@ -1,18 +1,18 @@
 div.body-main {
-  background-image: url('https://wallpapercave.com/wp/icdoPOT.gif');
-  background-size: 70% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%;
 
   .container {
-    padding: 100px 0 343px 0;
     .img {
       width: 200px;
       margin: 0 auto;
       display: block;
     }
+    .login-form {
+      background-image: url("./../../../assets/img/texture_login_and_register.png");
+      width: 500px;
+      margin: 10px auto 0 auto;
+      padding: 50px 0;
 
+    }
     form {
       width: 300px;
       margin: 0 auto;
@@ -30,7 +30,7 @@ div.body-main {
 }
 
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
-  border-bottom:2px solid white;
+  border-bottom:2px solid gold;
   font-weight: 700;
 }
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
@@ -38,7 +38,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
   font-weight: 700;
 }
 .input-field label {
-  color: white;
+  color: #235B1A;
   font-weight: 700;
 }
 

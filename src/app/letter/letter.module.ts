@@ -11,15 +11,14 @@ import {ApiService} from './../core/api.service';
 import {LetterService} from './letter.service';
 import {LetterAction} from '../store/letter/letter-action';
 import {GetLetterComponent} from './get-letter/get-letter.component';
-import {RemoveStringDearSantaPipe} from '../custom-pipes/remove-string-dear-santa.pipe';
 import { CardListingLettersComponent } from './card-listing-letters/card-listing-letters.component';
 import { NguiMapModule} from '@ngui/map';
+import {PipeModule} from '../custom-pipes/pipe.module';
 
 @NgModule({
   declarations: [
     AddLetterComponent,
     GetLetterComponent,
-    RemoveStringDearSantaPipe,
     CardListingLettersComponent
   ],
   imports: [
@@ -27,7 +26,8 @@ import { NguiMapModule} from '@ngui/map';
     FormsModule,
     MaterializeModule,
     FormsModule,
-    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyC4NsUn8I2eN40AgJOOyNh9PyLlooClSwE'})
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyC4NsUn8I2eN40AgJOOyNh9PyLlooClSwE'}),
+    PipeModule
   ],
   exports: [],
   providers: [

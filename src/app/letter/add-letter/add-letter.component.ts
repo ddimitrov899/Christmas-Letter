@@ -4,9 +4,6 @@ import { AddLetterModel } from './add-leter.model';
 import { LetterAction } from '../../store/letter/letter-action';
 import { NgRedux } from 'ng2-redux';
 import { IAppState } from '../../store';
-import * as disableImageSubmit from './../../../assets/img/air1.png';
-import * as enableImageSubmit from './../../../assets/img/air2.png';
-
 @Component({
   selector: 'letter-add-letter',
   templateUrl: './add-letter.component.html',
@@ -15,8 +12,8 @@ import * as enableImageSubmit from './../../../assets/img/air2.png';
 export class AddLetterComponent {
   message: AddLetterModel =
     new AddLetterModel('Dear Santa, ');
-  imgSubmit = enableImageSubmit;
-  imgDisable = disableImageSubmit;
+  imgSubmit = 'assets/img/air2.png';
+  imgDisable = 'assets/img/air1.png';
   constructor(
     private letterAction: LetterAction,
     private router: Router,

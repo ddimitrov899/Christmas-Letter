@@ -11,6 +11,7 @@ import { PrivateRoute } from './private.route';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { MessageHandlerComponent } from './message-handler/message-handler.component';
+import {PrivateAuthRoute} from './private-auth.route';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ CommonModule,
   providers: [
     AuthService,
     PrivateRoute,
+    PrivateAuthRoute
   ],
 })
 

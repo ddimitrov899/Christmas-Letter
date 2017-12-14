@@ -1,52 +1,60 @@
 <div class="body-main">
   <div class="container">
     <div class='img'>
-      <img src="https://vignette4.wikia.nocookie.net/animal-jam-clans-1/images/3/31/Christmas-baubles-and-bells-transparent-background.png/revision/latest?cb=20161026215315"
+      <img
+        src="https://vignette4.wikia.nocookie.net/animal-jam-clans-1/images/3/31/Christmas-baubles-and-bells-transparent-background.png/revision/latest?cb=20161026215315"
         alt="ChristmasWreath">
     </div>
-    <form #registerForm='ngForm' (submit)='register()'>
-      <div class="input-field col s6">
-        <input type="text" name="username" [(ngModel)]="user.username" id="username" class="validate" required #name='ngModel' />
-        <label for="username">First Name</label>
-      </div>
-      <div class="error" [hidden]='name.valid || name.pristine'>
-        <p>First Name is required!</p>
-      </div>
-      <div class="input-field col s6">
-        <input type="text" name="last-name" [(ngModel)]="user.lastName" id="last-name" class="validate" required #lastName='ngModel' />
-        <label for="last-name">Last Name</label>
-      </div>
-      <div class="error" [hidden]='lastName.valid || lastName.pristine'>
-        <p>Last Name is required!</p>
-      </div>
-      <div class="input-field col s6">
-        <input type="email" name="email" [(ngModel)]="user.email" id="email" class="validate" required #email='ngModel' />
-        <label for="email">Email</label>
-      </div>
-      <div class="error" [hidden]='email.valid || email.pristine'>
-        <p>E-mail is required!</p>
-      </div>
-      <div class="input-field col s6">
-        <input type="password" name="password" [(ngModel)]="user.password" id="password" class="validate" required #password='ngModel'
-        />
-        <label for="password">Password</label>
-      </div>
+    <div class="register-form">
+      <form #registerForm='ngForm' (submit)='register()'>
+        <div class="input-field col s6">
+          <input type="text" name="username" [(ngModel)]="user.username" id="username" class="validate" required
+                 #name='ngModel'/>
+          <label for="username">First Name</label>
+        </div>
+        <div class="error" [hidden]='name.valid || name.pristine'>
+          <p>First Name is required!</p>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" name="last-name" [(ngModel)]="user.lastName" id="last-name" class="validate" required
+                 #lastName='ngModel'/>
+          <label for="last-name">Last Name</label>
+        </div>
+        <div class="error" [hidden]='lastName.valid || lastName.pristine'>
+          <p>Last Name is required!</p>
+        </div>
+        <div class="input-field col s6">
+          <input type="email" name="email" [(ngModel)]="user.email" id="email" class="validate" required
+                 #email='ngModel'/>
+          <label for="email">Email</label>
+        </div>
+        <div class="error" [hidden]='email.valid || email.pristine'>
+          <p>E-mail is required!</p>
+        </div>
+        <div class="input-field col s6">
+          <input type="password" name="password" [(ngModel)]="user.password" id="password" class="validate" required
+                 #password='ngModel'
+          />
+          <label for="password">Password</label>
+        </div>
 
-      <div class="error" [hidden]='password.valid || password.pristine'>
-        <p>Password is required!</p>
-      </div>
-      <div class="input-field col s6">
-        <input type="password" name="repeat-password" [(ngModel)]="user.confirmPassword" id="repeat-password" class="validate" required
-          #confirmPassword='ngModel' />
-        <label for="repeat-password">Confirm Password</label>
-      </div>
-      <div class="error" [hidden]='confirmPassword.pristine || confirmPassword.value === password.value'>
-        <p>Passwords do not match!</p>
-      </div>
-      <div>
-        <input type="submit" class='btn btn-debug' value="Register" 
-        [disabled]='!registerForm.form.valid || confirmPassword.value !== password.value' />
-      </div>
-    </form>
+        <div class="error" [hidden]='password.valid || password.pristine'>
+          <p>Password is required!</p>
+        </div>
+        <div class="input-field col s6">
+          <input type="password" name="repeat-password" [(ngModel)]="user.confirmPassword" id="repeat-password"
+                 class="validate" required
+                 #confirmPassword='ngModel'/>
+          <label for="repeat-password">Confirm Password</label>
+        </div>
+        <div class="error" [hidden]='confirmPassword.pristine || confirmPassword.value === password.value'>
+          <p>Passwords do not match!</p>
+        </div>
+        <div>
+          <input type="submit" class='btn btn-debug' value="Register"
+                 [disabled]='!registerForm.form.valid || confirmPassword.value !== password.value'/>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

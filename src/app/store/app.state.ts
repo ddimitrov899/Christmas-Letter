@@ -2,6 +2,7 @@ import { IUsersState } from './users/user.state';
 import { ICoreState } from './core/core-state';
 import { IStatsState } from './stats/stats-state';
 import { IAddLetterState, IGetLetterState, IGetLettersState } from './letter/letter-state';
+import {ISendEmailLettersState} from './admin/email/email-state';
 
 export interface IAppState {
   users: IUsersState;
@@ -10,4 +11,5 @@ export interface IAppState {
   addLetters: IAddLetterState;
   getLetter: IGetLetterState;
   getLetters: IGetLettersState;
+  sendEmailLetters: ISendEmailLettersState;
 }
