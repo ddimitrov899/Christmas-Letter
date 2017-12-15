@@ -14,7 +14,7 @@
             {{letter.location}}
           </div>
         </div>
-        <input type="button"  (click)="sendEmail(letter._id, letter.email, letter.letter, letter.createdBy)" value="Send e-mail">
+        <button class="btn-floating btn-large waves-effect waves-light red" (click)="sendEmail(letter._id, letter.email, letter.letter, letter.createdBy)"><i class="material-icons">email</i></button>
       </form>
     </div>
   </div>
