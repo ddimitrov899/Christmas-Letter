@@ -13,9 +13,7 @@ const AuthMe = 'auth/me';
 @Injectable()
 export class UsersService {
 
-  constructor(private _api: ApiService,
-              private router: Router,
-              private authService: AuthService) {
+  constructor(private _api: ApiService) {
   }
 
   login(user: LoginUser) {
@@ -30,11 +28,5 @@ export class UsersService {
     return this._api.post(AuthMe, {email: email}, true);
   }
 
-  logout() {
-    this.authService.deauthenticateUser();
-    this.authService.removeUser();
-    this.authService.removeUserAdmin();
-    this.router.navigateByUrl('users/login');
-  }
 }
 

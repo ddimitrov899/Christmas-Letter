@@ -4,6 +4,7 @@ import {IAppState} from '../../store';
 import {AuthService} from '../auth.service';
 import {UserAction} from '../../store/users/users.action';
 import {AdminAction} from '../../store/admin/admin.action';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class NavbarComponent implements OnInit {
   constructor(private ngRedux: NgRedux<IAppState>,
               private adminAction: AdminAction,
               private usersAction: UserAction,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -43,5 +45,16 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.usersAction.logout();
+    this.ngRedux
+      .select(state => state.users)
+      .subscribe(users => {
+        this.authenticated = users.userAuthenticate;
+        this.familiar = users.familyName;
+      });
+    this.authService.deauthenticateUser();
+    this.authService.removeUser();
+    this.authService.removeEmail();
+    this.authService.removeUserAdmin();
+    this.router.navigateByUrl('/users/login');
   }
 }

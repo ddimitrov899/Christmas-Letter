@@ -54,6 +54,10 @@ export class AuthService {
     window.localStorage.removeItem('token');
   }
 
+  removeEmail() {
+    window.localStorage.removeItem('email');
+  }
+
   getToken() {
     return window.localStorage.getItem('token');
   }

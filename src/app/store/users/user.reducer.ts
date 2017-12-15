@@ -1,6 +1,5 @@
-import { initialState } from './user.state';
-import { USER_REGISTER, USER_LOGIN } from '../action-types';
-
+import {initialState} from './user.state';
+import {USER_REGISTER, USER_LOGIN, LOGOUT} from '../action-types';
 
 export function UsersReducer(state = initialState, action) {
   switch (action.type) {
@@ -8,6 +7,8 @@ export function UsersReducer(state = initialState, action) {
       return registrationUser(state, action);
     case USER_LOGIN:
       return loginUser(state, action);
+    case LOGOUT:
+      return logout(state, action);
     default:
       return state;
   }
@@ -34,4 +35,12 @@ function loginUser(state, action) {
   return Object.assign({}, state, {
     userRegister: result.success
   });
+}
+
+function logout(state, action) {
+  return Object.assign({}, state, {
+    userAuthenticate: false,
+    token: null,
+    familyName: null,
+});
 }
