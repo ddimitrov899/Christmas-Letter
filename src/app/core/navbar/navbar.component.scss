@@ -22,11 +22,15 @@ nav {
     background: url("./../../resurces/2.png") no-repeat;
     background-size: 90% 100%;
   }
+  .approved-letter {
+    background: url("./../../resurces/6.png") no-repeat;
+    background-size: 80% 100%;
+  }
   .logout {
     background: url("./../../resurces/3.png") no-repeat;
     background-size: 75% 100%;
   }
-  & .login, & .register, & .send-letter, & .logout, & .home {
+  & .login, & .register, & .send-letter, & .logout, & .home, & .approved-letter {
     padding-top: 20px;
     padding-left: 0;
     height: 50px;

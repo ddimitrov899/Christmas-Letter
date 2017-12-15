@@ -1,7 +1,11 @@
 import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class AuthService {
+  constructor(private router: Router) {
+
+  }
 
   saveUser(user) {
     window.localStorage.setItem('user', user);
@@ -25,8 +29,13 @@ export class AuthService {
 
   isUserAdmin() {
     const data = window.sessionStorage.getItem('a');
-    const dataUser = data.split(' ');
-    return dataUser[0] === 'true' && dataUser[1] === this.getToken();
+    if (data) {
+      const dataUser = data.split(' ');
+      return dataUser[0] === 'true' && dataUser[1] === this.getToken();
+    } else {
+      this.router.navigateByUrl('');
+      return false;
+    }
   }
 
   removeUserAdmin() {

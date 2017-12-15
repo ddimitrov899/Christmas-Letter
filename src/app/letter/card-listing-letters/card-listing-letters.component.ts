@@ -28,7 +28,6 @@ export class CardListingLettersComponent implements OnInit {
       .select(state => state.getLetters)
       .subscribe(letters => {
         if (letters.getSuccess) {
-          console.log(letters);
           this.positions = letters.letters;
         }
       });

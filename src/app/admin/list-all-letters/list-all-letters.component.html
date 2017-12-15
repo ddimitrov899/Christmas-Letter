@@ -14,7 +14,7 @@
             {{letter.location}}
           </div>
         </div>
-        <input type="button"  (click)="sendEmail(letter._id, letter.email)" value="Send e-mail">
+        <input type="button"  (click)="sendEmail(letter._id, letter.email, letter.letter, letter.createdBy)" value="Send e-mail">
       </form>
     </div>
   </div>

@@ -4,6 +4,7 @@ import {NgRedux} from 'ng2-redux';
 import {IAppState} from '../../store';
 import {LetterAction} from '../../store/letter/letter-action';
 import {EmailAction} from '../../store/admin/email/email-action';
+import {LetterToModel} from '../send-letter/letter-to.model';
 
 @Component({
   selector: 'letter-list-all-letters',
@@ -29,7 +30,8 @@ export class ListAllLettersComponent implements OnInit {
       });
   }
 
-  sendEmail(id, email) {
-    this.emailAction.sendEmailLetter(id, email);
+  sendEmail(id, email, letter, createdBy) {
+    const mail: LetterToModel = {content: `${letter} \nfrom: ${createdBy}`, email: email};
+    this.emailAction.sendEmailLetter(mail);
   }
 }

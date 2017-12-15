@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgRedux } from 'ng2-redux';
 import { IAppState } from '../../store';
 import { UsersService } from '../../users/users.service';
+import {AuthService} from '../auth.service';
 
 
 @Component({
@@ -11,12 +12,14 @@ import { UsersService } from '../../users/users.service';
 })
 export class NavbarComponent implements OnInit {
   authenticated = false;
+  specialAuth = false;
   familiar: string = null;
   img = 'assets/img/logo.png';
 
   constructor(
     private ngRedux: NgRedux<IAppState>,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -26,6 +29,7 @@ export class NavbarComponent implements OnInit {
         this.authenticated = users.userAuthenticate;
         this.familiar = users.familyName;
       });
+    this.specialAuth = this.authService.isUserAdmin();
   }
 
   logout() {

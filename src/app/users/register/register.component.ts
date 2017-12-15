@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { RegisterUser } from './register.user.model';
-import { UserAction } from '../../store/users/users.action';
-import { NgRedux } from 'ng2-redux';
-import { IAppState } from '../../store';
-import { Router } from '@angular/router';
+import {Component} from '@angular/core';
+import {RegisterUser} from './register.user.model';
+import {UserAction} from '../../store/users/users.action';
+import {NgRedux} from 'ng2-redux';
+import {IAppState} from '../../store';
+import {Router} from '@angular/router';
 import {StatsActions} from '../../store/stats/stats-actions';
 
 @Component({
@@ -11,16 +11,14 @@ import {StatsActions} from '../../store/stats/stats-actions';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
   user: RegisterUser = new RegisterUser();
-  constructor(
-    private statsActions: StatsActions,
-    private usersAction: UserAction,
-    private router: Router,
-    private ngRedux: NgRedux<IAppState>) { }
 
-  ngOnInit() {
+  constructor(private statsActions: StatsActions,
+              private usersAction: UserAction,
+              private router: Router,
+              private ngRedux: NgRedux<IAppState>) {
   }
 
   register() {

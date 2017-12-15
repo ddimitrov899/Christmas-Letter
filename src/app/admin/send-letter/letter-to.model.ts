@@ -1,6 +1,6 @@
 export class LetterToModel {
-  constructor(public id: number,
-              public email?: string) {
+  constructor(public content: string,
+              public email: string) {
 
   }
 }

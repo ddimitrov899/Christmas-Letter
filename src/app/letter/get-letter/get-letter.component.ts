@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {NgRedux} from 'ng2-redux';
 import {IAppState} from '../../store';
 import {LetterModel} from '../leter.model';
-// import  * as imageArrow from './../../../assets/img/agel-2.png';
 
 @Component({
   selector: 'letter-get-letter',

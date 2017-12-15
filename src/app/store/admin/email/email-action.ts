@@ -11,8 +11,8 @@ export class EmailAction {
 
   }
 
-  sendEmailLetter(id, email) {
-    this.adminService.sendMail({id: id, email: email})
+  sendEmailLetter(mail) {
+    this.adminService.sendMail(mail)
       .subscribe(result => {
         this.ngRedux.dispatch({
           type: SEND_EMAIL_LETTER,
