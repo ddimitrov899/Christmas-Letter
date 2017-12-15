@@ -5,7 +5,6 @@ import {IAppState} from './../app.state';
 import {USER_REGISTER, USER_LOGIN} from './../action-types';
 import {RegisterUser} from './../../users/register/register.user.model';
 import {LoginUser} from '../../users/login/login.user.model';
-
 @Injectable()
 export class UserAction {
   constructor(private usersService: UsersService,
@@ -33,7 +32,8 @@ export class UserAction {
         });
       });
   }
-  isAuthMe (email) {
-    return this.usersService.isAuthMe(email);
+
+  logout() {
+    this.usersService.logout();
   }
 }

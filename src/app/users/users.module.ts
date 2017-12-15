@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { UserAction } from './../store/users/users.action';
 import { UsersService } from './users.service';
+import {AdminAction} from '../store/admin/admin.action';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { UsersService } from './users.service';
   exports: [],
   providers: [
     UsersService,
+    AdminAction,
     UserAction
   ],
 })

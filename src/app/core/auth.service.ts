@@ -15,6 +15,14 @@ export class AuthService {
     return window.localStorage.getItem('user');
   }
 
+  saveEmail(email) {
+    window.localStorage.setItem('email', email);
+  }
+
+  getEmail() {
+    return window.localStorage.getItem('email');
+  }
+
   removeUser() {
     window.localStorage.removeItem('user');
   }

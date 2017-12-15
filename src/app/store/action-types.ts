@@ -11,4 +11,4 @@ export const SEND_LETTER = 'SEND_LETTER';
 
 export const SEND_EMAIL_LETTER = 'SEND_EMAIL_LETTER';
 
-
+export const IS_ADMIN = 'IS_ADMIN';

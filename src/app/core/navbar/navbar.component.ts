@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { NgRedux } from 'ng2-redux';
-import { IAppState } from '../../store';
-import { UsersService } from '../../users/users.service';
+import {Component, OnInit} from '@angular/core';
+import {NgRedux} from 'ng2-redux';
+import {IAppState} from '../../store';
 import {AuthService} from '../auth.service';
+import {UserAction} from '../../store/users/users.action';
+import {AdminAction} from '../../store/admin/admin.action';
 
 
 @Component({
@@ -16,11 +17,11 @@ export class NavbarComponent implements OnInit {
   familiar: string = null;
   img = 'assets/img/logo.png';
 
-  constructor(
-    private ngRedux: NgRedux<IAppState>,
-    private usersService: UsersService,
-    private authService: AuthService
-  ) { }
+  constructor(private ngRedux: NgRedux<IAppState>,
+              private adminAction: AdminAction,
+              private usersAction: UserAction,
+              private authService: AuthService) {
+  }
 
   ngOnInit() {
     this.ngRedux
@@ -29,10 +30,18 @@ export class NavbarComponent implements OnInit {
         this.authenticated = users.userAuthenticate;
         this.familiar = users.familyName;
       });
-    this.specialAuth = this.authService.isUserAdmin();
+
+    this.adminAction.isAdmin(this.authService.getEmail());
+    this.ngRedux
+      .select(state => state.isAdmin)
+      .subscribe(auth => {
+        if (auth.success) {
+          this.specialAuth = auth.success;
+        }
+      });
   }
 
   logout() {
-    this.usersService.logout();
+    this.usersAction.logout();
   }
 }

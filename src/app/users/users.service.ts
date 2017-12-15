@@ -34,7 +34,6 @@ export class UsersService {
     this.authService.deauthenticateUser();
     this.authService.removeUser();
     this.authService.removeUserAdmin();
-    window.location.reload();
     this.router.navigateByUrl('users/login');
   }
 }
